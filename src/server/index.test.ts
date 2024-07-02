@@ -3,8 +3,8 @@ import winston from "winston";
 import { createServer } from ".";
 import { InMemoryEmailActionDataService } from "../services/EmailActionDataService";
 import { DummyEmailProvider } from "../services/EmailProvider";
-import { InMemoryJobRunner } from "../services/JobRunner";
 import { MarketingEventService } from "../services/MarketingEventService";
+import { MockJobRunner } from "../tests/mocks";
 
 const createTestServer = () => {
   const logger = winston.createLogger({
@@ -15,9 +15,11 @@ const createTestServer = () => {
 
   logger.silent = true;
 
-  const eventActionDataStore = new InMemoryEmailActionDataService({});
-  const emailProvider = new DummyEmailProvider();
-  const jobRunner = new InMemoryJobRunner();
+  const testActions = { ["socksPurchased"]: [{ subject: "Payment received", body: "Thank you!" }] };
+
+  const eventActionDataStore = new InMemoryEmailActionDataService(testActions);
+  const emailProvider = new DummyEmailProvider(logger);
+  const jobRunner = new MockJobRunner();
 
   const marketingEventService = new MarketingEventService(logger, eventActionDataStore, jobRunner, emailProvider);
 

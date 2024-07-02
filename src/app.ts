@@ -18,10 +18,10 @@ const logger = winston.createLogger({
 });
 
 // setup dependencies
-const eventActionDataStore = new InMemoryEmailActionDataService(eventActions);
+const emailActionDataService = new InMemoryEmailActionDataService(eventActions);
 const emailProvider = new DummyEmailProvider(logger);
 const jobRunner = new InMemoryJobRunner(logger);
-const marketingEventService = new MarketingEventService(logger, eventActionDataStore, jobRunner, emailProvider);
+const marketingEventService = new MarketingEventService(logger, emailActionDataService, jobRunner, emailProvider);
 
 // server
 const app = createServer(logger, marketingEventService);

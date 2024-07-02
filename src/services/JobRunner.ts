@@ -32,9 +32,9 @@ export interface JobRunner {
 }
 
 export class InMemoryJobRunner implements JobRunner {
-  logger: Logger;
-  jobQueues: Record<string, Queue> = {};
-  redisServer: RedisMemoryServer;
+  private logger: Logger;
+  private jobQueues: Record<string, Queue> = {};
+  private redisServer: RedisMemoryServer;
 
   constructor(logger: Logger) {
     this.logger = logger;
@@ -42,6 +42,8 @@ export class InMemoryJobRunner implements JobRunner {
   }
 
   async registerJob<T>(job: JobDefinition<T>) {
+    this.logger.debug("InMemoryJobRunner.registerJob", job, job.process);
+
     const host = await this.redisServer.getHost();
     const port = await this.redisServer.getPort();
 
@@ -59,7 +61,10 @@ export class InMemoryJobRunner implements JobRunner {
   }
 
   async triggerJob<T>(name: string, data: T, options?: JobOptions) {
+    this.logger.debug("InMemoryJobRunner.triggerJob", name, data, options);
+
     const queue = this.jobQueues[name];
+    if (!queue) throw `No job queue registered for ${name}`;
 
     const job = queue.createJob(data);
 

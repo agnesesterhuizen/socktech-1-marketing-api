@@ -13,7 +13,7 @@ export interface EmailProvider {
 }
 
 export class DummyEmailProvider implements EmailProvider {
-  logger: Logger;
+  private logger: Logger;
 
   constructor(logger: Logger) {
     this.logger = logger;

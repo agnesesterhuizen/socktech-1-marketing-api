@@ -18,10 +18,10 @@ export interface MarketingEvent {
 
 // Coordinates validating events, fetching and triggering actions
 export class MarketingEventService {
-  logger: Logger;
-  emailActionStore: EmailActionDataService;
-  jobRunner: JobRunner;
-  emailProvider: EmailProvider;
+  private logger: Logger;
+  private emailActionStore: EmailActionDataService;
+  private jobRunner: JobRunner;
+  private emailProvider: EmailProvider;
 
   constructor(
     logger: Logger,
