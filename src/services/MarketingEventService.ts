@@ -30,9 +30,6 @@ export class MarketingEventService {
   async triggerEvent(event: MarketingEvent) {
     this.logger.debug("event:", event);
 
-    // validate email
-    // TODO:
-
     // fetch actions from data store
     const actions = await this.emailActionStore.getActions(event.eventName);
 

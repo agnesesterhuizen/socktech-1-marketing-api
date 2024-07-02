@@ -7,6 +7,7 @@ import { InMemoryEmailActionDataService } from "./services/EmailActionDataServic
 import { DummyEmailProvider } from "./services/EmailProvider";
 import { InMemoryJobRunner } from "./services/JobRunner";
 import eventActions from "./data/email-event-data.json";
+import { isValidEmail } from "./utils/email";
 
 // config
 dotenv.config();
@@ -33,8 +34,9 @@ app.use(express.json());
 app.post("/event", async (req: Request<{}, {}, MarketingEvent>, res) => {
   logger.debug(JSON.stringify(req.body));
 
-  if (!req.body.eventName || !req.body.userEmail) {
+  if (!req.body.eventName || !isValidEmail(req.body.userEmail)) {
     res.sendStatus(400);
+    return;
   }
 
   try {
