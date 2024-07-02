@@ -1,32 +1,84 @@
 import { RedisMemoryServer } from "redis-memory-server";
 import Queue from "bee-queue";
+import { addSeconds } from "date-fns";
+import { Logger } from "winston";
 
-export interface JobRunner {}
+export interface JobDefinition<T> {
+  name: string;
+  process: (data: T) => Promise<void>;
+}
+
+export interface JobOptions {
+  timeout?: number;
+  retries?: number;
+  delaySeconds?: number;
+}
+
+const applyJobOptionsDefaults = (options?: JobOptions) => {
+  const timeout = options?.timeout !== undefined ? options.timeout : 3000;
+  const retries = options?.retries !== undefined ? options.retries : 3;
+  const delaySeconds = options?.delaySeconds !== undefined ? options.delaySeconds : 0;
+
+  return {
+    timeout,
+    retries,
+    delaySeconds,
+  };
+};
+
+export interface JobRunner {
+  registerJob: <T>(job: JobDefinition<T>) => Promise<void>;
+  triggerJob: <T>(name: string, data: T, options?: JobOptions) => Promise<void>;
+}
 
 export class InMemoryJobRunner implements JobRunner {
-  async init() {
-    const redisServer = new RedisMemoryServer();
+  logger: Logger;
+  jobQueues: Record<string, Queue> = {};
+  redisServer: RedisMemoryServer;
 
-    const host = await redisServer.getHost();
-    const port = await redisServer.getPort();
+  constructor(logger: Logger) {
+    this.logger = logger;
+    this.redisServer = new RedisMemoryServer();
+  }
 
-    const queue = new Queue("example", {
+  async registerJob<T>(job: JobDefinition<T>) {
+    const host = await this.redisServer.getHost();
+    const port = await this.redisServer.getPort();
+
+    const queue = new Queue(job.name, {
       redis: {
         host,
         port,
       },
+      activateDelayedJobs: true,
     });
 
-    const job = queue.createJob({ x: 2, y: 3 });
+    this.jobQueues[job.name] = queue;
+
+    queue.process(async (queueJob) => job.process(queueJob.data));
+  }
+
+  async triggerJob<T>(name: string, data: T, options?: JobOptions) {
+    const queue = this.jobQueues[name];
+
+    const job = queue.createJob(data);
+
+    const { timeout, retries, delaySeconds } = applyJobOptionsDefaults(options);
+
+    job.timeout(timeout);
+    job.retries(retries);
+
+    if (delaySeconds > 0) {
+      const delayUntilTime = addSeconds(Date.now(), delaySeconds);
+      job.delayUntil(delayUntilTime);
+    }
+
+    job.on("succeeded", () => this.logger.info(`JobRunner: succeeded ${name}`));
+    job.on("retrying", (error) => this.logger.info(`JobRunner: retrying ${error}`));
+    job.on("failed", (error) => this.logger.error(`JobRunner: error ${error}`));
+
+    this.logger.debug(`triggering job: ${JSON.stringify({ name, delaySeconds, timeout, retries })}`);
+
     job.save();
-    job.on("succeeded", (result) => {
-      console.log(`Received result for job ${job.id}: ${result}`);
-    });
-
-    // @ts-ignore
-    queue.process(function (job, done) {
-      console.log(`Processing job ${job.id}`);
-      return done(null, job.data.x + job.data.y);
-    });
   }
 }

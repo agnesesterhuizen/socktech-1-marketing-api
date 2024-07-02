@@ -3,7 +3,7 @@
     {
       "subject": "Welcome!",
       "body": "Need some socks?",
-      "delaySeconds": 7200
+      "delaySeconds": 5
     }
   ],
   "socksPurchased": [
