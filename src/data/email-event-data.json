@@ -1,0 +1,19 @@
+{
+  "websiteSignup": [
+    {
+      "subject": "Welcome!",
+      "body": "Need some socks?",
+      "delaySeconds": 7200
+    }
+  ],
+  "socksPurchased": [
+    {
+      "subject": "Payment received",
+      "body": "Thank you!"
+    },
+    {
+      "subject": "Socks dispatched!",
+      "body": "Get ready!"
+    }
+  ]
+}
