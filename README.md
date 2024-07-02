@@ -28,3 +28,7 @@ curl --header "Content-Type: application/json" \
   --data '{"eventName":"socksPurchased","userEmail":"test@healthtech1.uk"}' \
   http://localhost:3000/event
 ```
+
+## Architecture
+
+![SockTech-1 architecture diagram](/docs/SockTech-1.drawio.png)
