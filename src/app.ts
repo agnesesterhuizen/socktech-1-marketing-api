@@ -1,53 +1,28 @@
-import express, { Request } from "express";
 import dotenv from "dotenv";
 import winston from "winston";
-import { requestLoggerMiddleware } from "./server/middleware";
-import { MarketingEvent, MarketingEventService } from "./services/MarketingEventService";
+import { MarketingEventService } from "./services/MarketingEventService";
 import { InMemoryEmailActionDataService } from "./services/EmailActionDataService";
 import { DummyEmailProvider } from "./services/EmailProvider";
 import { InMemoryJobRunner } from "./services/JobRunner";
 import eventActions from "./data/email-event-data.json";
-import { isValidEmail } from "./utils/email";
+import { createServer } from "./server";
 
 // config
 dotenv.config();
 const port = process.env.PORT;
 
-// setup dependencies
 const logger = winston.createLogger({
   transports: [new winston.transports.Console()],
   format: winston.format.simple(),
   level: "debug",
 });
 
+// setup dependencies
 const eventActionDataStore = new InMemoryEmailActionDataService(eventActions);
 const emailProvider = new DummyEmailProvider();
 const jobRunner = new InMemoryJobRunner();
 const marketingEventService = new MarketingEventService(logger, eventActionDataStore, jobRunner, emailProvider);
 
 // server
-const app = express();
-
-app.use(requestLoggerMiddleware(logger));
-app.use(express.json());
-
-app.post("/event", async (req: Request<{}, {}, MarketingEvent>, res) => {
-  logger.debug(JSON.stringify(req.body));
-
-  if (!req.body.eventName || !isValidEmail(req.body.userEmail)) {
-    res.sendStatus(400);
-    return;
-  }
-
-  try {
-    await marketingEventService.triggerEvent(req.body);
-  } catch (error) {
-    logger.error("triggerEvent failed:", error);
-    res.sendStatus(500);
-    return;
-  }
-
-  res.sendStatus(200);
-});
-
+const app = createServer(logger, marketingEventService);
 app.listen(port, () => logger.info(`[server]: Server is running at http://localhost:${port}`));
