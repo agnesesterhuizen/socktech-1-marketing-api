@@ -34,7 +34,7 @@ describe("POST /email", () => {
 
     const response = await request(app)
       .post("/event")
-      .send({ eventName: "socksPurchased", userEmail: "pete@healthtech1.uk" })
+      .send({ eventName: "socksPurchased", userEmail: "test@healthtech1.uk" })
       .set("Accept", "application/json");
 
     expect(response.status).toEqual(200);

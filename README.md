@@ -25,6 +25,6 @@ npm test
 ```
 curl --header "Content-Type: application/json" \
   --request POST \
-  --data '{"eventName":"socksPurchased","userEmail":"pete@healthtech1.uk"}' \
+  --data '{"eventName":"socksPurchased","userEmail":"test@healthtech1.uk"}' \
   http://localhost:3000/event
 ```

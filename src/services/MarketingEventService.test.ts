@@ -10,7 +10,7 @@ describe("MarketingEventService", () => {
     // const service = setupService();
     // const event = {
     //   eventName: "websiteSignup",
-    //   userEmail: "pete@healthtech1.uk",
+    //   userEmail: "test@healthtech1.uk",
     // };
     // service.triggerEvent(event);
   });
@@ -18,7 +18,7 @@ describe("MarketingEventService", () => {
   // test("handles marketing flow 2", async () => {
   //   const event = {
   //     eventName: "socksPurchased",
-  //     userEmail: "pete@healthtech1.uk",
+  //     userEmail: "test@healthtech1.uk",
   //   };
 
   //   // no delay for this flow
