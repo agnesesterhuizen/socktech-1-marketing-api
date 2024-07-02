@@ -14,7 +14,7 @@ const port = process.env.PORT;
 const logger = winston.createLogger({
   transports: [new winston.transports.Console()],
   format: winston.format.simple(),
-  level: "debug",
+  level: "info",
 });
 
 // setup dependencies
