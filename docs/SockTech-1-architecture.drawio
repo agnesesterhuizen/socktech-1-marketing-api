@@ -1,0 +1,126 @@
+<mxfile host="app.diagrams.net" modified="2024-07-02T10:57:30.301Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="NsmSlSyGhG9u81gHMnL0" version="24.6.4" type="device">
+  <diagram name="Page-1" id="Mj47GKIRpnS4HvQr7QjO">
+    <mxGraphModel dx="1026" dy="605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SMoT0oA4fTauASkVyLD7-44" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry width="840" height="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-1" value="event store" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="210" y="320" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-2" value="high level system architecture" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="750" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-3" value="&lt;p style=&quot;margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 13px; line-height: normal; font-family: &amp;quot;Helvetica Neue&amp;quot;; text-align: start;&quot; class=&quot;p1&quot;&gt;SockTech-1 internal marketing event API&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#87DBFF;gradientDirection=east;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="750" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-5" target="SMoT0oA4fTauASkVyLD7-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-10" value="dispatch&lt;div&gt;&amp;nbsp;event&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-9">
+          <mxGeometry x="-0.1" y="-1" relative="1" as="geometry">
+            <mxPoint y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-5" value="&lt;span style=&quot;font-family: &amp;quot;Helvetica Neue&amp;quot;; font-size: 13px; text-align: start;&quot;&gt;SockTech-1&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Helvetica Neue&amp;quot;; font-size: 13px; text-align: start;&quot;&gt;marketing&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Helvetica Neue&amp;quot;; font-size: 13px; text-align: start;&quot;&gt;site&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-18" value="queue email&lt;div&gt;&amp;nbsp;jobs according&lt;/div&gt;&lt;div&gt;&amp;nbsp;to action&amp;nbsp;&lt;/div&gt;&lt;div&gt;definition&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-16">
+          <mxGeometry x="-0.0062" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-6" value="marketing event API" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-6" target="SMoT0oA4fTauASkVyLD7-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-13" value="get actions for event" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-12">
+          <mxGeometry x="0.24" relative="1" as="geometry">
+            <mxPoint y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-17" target="SMoT0oA4fTauASkVyLD7-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-22" value="send email" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-21">
+          <mxGeometry x="0.05" y="3" relative="1" as="geometry">
+            <mxPoint y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-17" value="job runner" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="360" y="200" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-20" value="user" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="200" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-23" value="api architecture" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="750" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-24" target="SMoT0oA4fTauASkVyLD7-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-35" value="event" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-34">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-24" value="&lt;div&gt;HTTP server&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;- express&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;- webhook endpoint for events&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-25" target="SMoT0oA4fTauASkVyLD7-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-36" value="event action data" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-33">
+          <mxGeometry x="0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-25" value="Marketing event data store&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;div style=&quot;&quot;&gt;- retrieves action data for events&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- store will be a static file but should be able to be swapped out for a db if needed&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- read only for now&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+          <mxGeometry x="240" y="680" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-26" target="SMoT0oA4fTauASkVyLD7-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-26" value="&lt;div&gt;underlying&lt;/div&gt;event store" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="270" y="850" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-29" target="SMoT0oA4fTauASkVyLD7-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-39" value="queue up&amp;nbsp;&lt;div&gt;actions to be&amp;nbsp;&lt;/div&gt;&lt;div&gt;executed&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-38">
+          <mxGeometry x="-0.125" y="-2" relative="1" as="geometry">
+            <mxPoint x="5" y="-32" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-29" value="Marketing event service&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;- coordinates validating event, fetching and triggering actions&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="240" y="520" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="SMoT0oA4fTauASkVyLD7-37">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-43" value="dispatch&lt;div&gt;&amp;nbsp;emails&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="SMoT0oA4fTauASkVyLD7-40">
+          <mxGeometry x="-0.1056" y="2" relative="1" as="geometry">
+            <mxPoint y="-28" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-37" value="Job Runner&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;div style=&quot;&quot;&gt;-&amp;nbsp;runs email jobs in background&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- supports timers&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;bee-queue + in memory redis server but should be easy to swap out&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
+          <mxGeometry x="440" y="520" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="SMoT0oA4fTauASkVyLD7-42" value="&lt;div&gt;Email Provider&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;div style=&quot;&quot;&gt;- call&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;sendEmail() function for now&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fad9d5;strokeColor=#ae4132;" vertex="1" parent="1">
+          <mxGeometry x="640" y="520" width="120" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
